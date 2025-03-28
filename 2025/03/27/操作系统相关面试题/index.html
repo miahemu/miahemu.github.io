@@ -1,0 +1,691 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>操作系统相关面试题 | 和睦的拾光物语</title><meta name="keywords" content="JAVA面经"><meta name="author" content="miahemu"><meta name="copyright" content="miahemu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="操作系统相关面试题"><meta name="application-name" content="操作系统相关面试题"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="操作系统相关面试题"><meta property="og:url" content="http://example.com/2025/03/27/操作系统相关面试题/index.html"><meta property="og:site_name" content="和睦的拾光物语"><meta property="og:description" content="基于技术书籍对Java面试过程中所遇到的重点问题进行深度解读，整合了来自JavaGuide等著名博主的面经分享，并回归课本进行了重写与补充。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://w.wallhaven.cc/full/p9/wallhaven-p9q9mj.png"><meta property="article:author" content="miahemu"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://w.wallhaven.cc/full/p9/wallhaven-p9q9mj.png"><meta name="description" content="基于技术书籍对Java面试过程中所遇到的重点问题进行深度解读，整合了来自JavaGuide等著名博主的面经分享，并回归课本进行了重写与补充。"><link rel="shortcut icon" href="https://pic1.imgdb.cn/item/67dfd64f88c538a9b5c51349.png"><link rel="canonical" href="http://example.com/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"此去经年，别忘了归途","backTitle":"还知道回来？"},
+  LA51: {"enable":true,"ck":"3LdBYNynGFmvRJ0D","LingQueMonitorID":null},
+  greetingBox: {"enable":true,"default":"晚上好👋 愿你拥有美好的时光！","list":[{"greeting":"夜深了，早点休息，晚安😴","startTime":0,"endTime":5},{"greeting":"早上好☀️ 愿你的一天从愉快开始！","startTime":6,"endTime":9},{"greeting":"上午好👋 状态满满，加油迎接新的一天！","startTime":10,"endTime":10},{"greeting":"11点多啦，午餐时间快到了，继续加油！","startTime":11,"endTime":11},{"greeting":"午安！🌿 休息一下，享受美好的午后时光。","startTime":12,"endTime":14},{"greeting":"下午好！☕ 工作辛苦了，别忘了适当放松一下~","startTime":14,"endTime":18},{"greeting":"晚餐时间到啦！🍽️ 奖励自己一顿美食吧！","startTime":19,"endTime":19},{"greeting":"晚上好👋 愿你在属于自己的时间里放松身心~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":2},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🚀 数码科技探索者","🌿 乐于分享，热心助人","🏡 智能家居智造者","🛠 全栈式设计与开发","🎯 专注交互体验优化","🏃 执行力满分的实干家","⚙️ 团队协作的驱动力","💪 低调务实的实力派"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    simplehomepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: miahemu","link":"链接: ","source":"来源: 和睦的拾光物语","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '和睦的拾光物语',
+  title: '操作系统相关面试题',
+  postAI: '',
+  pageFillDescription: '面试官： 进程和线程的区别（高频）, 面试官： 线程比进程高效的原因？（高频）, 面试官： 进程线程协程的区别是什么？（高频）, 面试官： 用户态和内核态是如何切换的？（高频）, 面试官： 什么是孤儿进程？什么是僵尸进程？, 面试官： 假设两个线程并发读写同一个整型变量初始值为零每个线程加 50 次结果可能是什么？, 面试官： 进程的调度算法有哪些?, 面试官： 进程间的通信方式, 面试官： 那线程间的同步的⽅式有哪些呢？, 面试官： 操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？, 面试官： 快表和多级⻚表, 面试官： 分⻚机制和分段机制有哪些共同点和区别呢？, 面试官： 逻辑(虚拟)地址和物理地址, 面试官： 什么是虚拟内存?, 面试官： 说⼀下⻚⾯置换算法的作⽤?常⻅的⻚⾯置换算法有哪些?, 面试官： 解释一下进程同步和互斥以及解决这些问题的办法, 面试官： 介绍一下几种典型的锁, 面试官：死锁产生的条件是什么？（高频）, 面试官：如何避免线程死锁?（高频）, 面试官：如何进行死锁诊断？（高频）本文为原创内容转载请注明出处并附带原文链接感谢您的尊重与支持你必须非常努力才能看起来毫不费劲面试官进程和线程的区别高频候选人线程和进程的区别主要体现在以下四个方面资源分配进程是操作系统分配资源的基本单位拥有独立的内存空间线程共享进程资源多个线程可访问相同的数据你说到进程是分配资源的基本单位那么这个资源指的是什么虚拟内存文件句柄信号量等资源创建与切换开销进程创建和切换成本较高需要完整的资源分配和回收线程切换更轻量仅需保存和恢复私有数据通信与同步进程间通信依赖管道消息队列等机制效率较低线程共享进程数据通信更快但需加锁避免竞争容错与并发进程崩溃通常不影响其他进程适用于高可靠性场景线程共享进程资源故单个线程异常可能导致整个进程崩溃面试官线程比进程高效的原因高频候选人线程相较于进程的优势主要体现在资源共享创建成本切换开销和并发效率四个方面资源共享进程间通信成本较高而线程共享进程资源数据访问更快通信更高效创建成本进程创建需分配独立内存开销大线程仅需分配栈创建速度更快切换开销进程切换涉及完整上下文切换线程切换仅涉及寄存器和栈指针开销更小并发执行线程能充分利用多核并行执行提高程序吞吐量而进程的资源隔离限制了并发效率面试官进程线程协程的区别是什么高频候选人首先我们来谈谈进程进程是操作系统分配资源的基本单位它拥有自己的独立内存空间和系统资源每个进程都有独立的堆和栈不与其他进程共享进程间通信需要通过特定的机制如管道消息队列信号量等由于进程拥有独立的内存空间因此其稳定性和安全性相对较高但同时上下文切换的开销也较大因为需要保存和恢复整个进程的状态接下来是线程线程是进程内的一个执行单元也是调度的基本单位与进程不同线程共享进程的内存空间包括堆和方法区线程之间通信更加高效因为它们可以直接读写共享内存线程的上下文切换开销较小因为只需要保存和恢复线程的上下文而不是整个进程的状态然而由于多个线程共享内存空间因此存在线程安全的问题需要通过同步和互斥机制来解决最后是协程协程是一种用户态的轻量级线程其调度完全由用户程序控制而不需要内核的参与协程拥有自己的寄存器和栈但与其他协程共享堆内存协程的切换开销非常小因为只需要保存和恢复协程的上下文而无需进行内核级的上下文切换这使得协程在处理大量并发任务时具有非常高的效率然而协程需要程序员显式地进行调度和管理相对于线程和进程来说其编程模型更为复杂面试官用户态和内核态是如何切换的高频候选人在操作系统中用户态用于运行普通应用程序受限访问系统资源而内核态具备最高权限能够直接控制硬件两者的切换主要通过以下三种方式系统调用应用程序请求受限资源如文件网络时会触发系统调用使进入内核态执行相应内核函数完成后返回用户态异常处理程序在用户态发生错误如除零非法内存访问时进入内核态执行异常处理程序决定是否恢复或终止进程硬件中断当外设比如键盘定时器等完成任务时触发中断切换至内核态处理中断随后恢复用户态继续执行程序面试官什么是孤儿进程什么是僵尸进程候选人孤儿进程是指父进程在子进程结束之前就已经退出导致子进程失去了父进程的管理和控制成为了孤儿此时这些子进程会被系统的进程在系统中进程为所收养进程会负责回收它们的资源等工作僵尸进程是指一个进程已经执行完了它的主要任务进入了终止状态但由于某些原因它的父进程没有调用相应的系统函数如或来收集它的退出状态信息导致该进程虽然已经停止运行但在系统进程表中仍然保留着一个记录占据着一定的系统资源下可以使用命令查找值表示僵尸进程的数量为则代表没有僵尸进程下面这个命令可以定位僵尸进程以及该僵尸进程的父进程面试官假设两个线程并发读写同一个整型变量初始值为零每个线程加次结果可能是什么候选人在没有任何同步机制的情况下两个线程并发对同一个整型变量进行次加操作最终结果可能是也可能小于最坏的结果是也就是最终的结果可能是在小于情况的分析由于对整型变量的操作不是原子操作它实际上包含了三个步骤读取变量的值将值加将新值写回变量在多线程环境下可能会出现线程安全问题例如线程和线程同时读取了变量的当前值然后各自将其加最后都将相同的新值写回变量这就导致了一次加操作的丢失这种情况会多次发生最终结果就会小于追问如何保证个线程累加之后达到第一种方式原子变量的方法使用替代普通其方法保证原子性代码如下最终结果第二种方式通过关键字或确保操作的互斥性代码如下最终结果面试官进程的调度算法有哪些候选人先到先服务调度算法按照进程到达的先后顺序进行调度即最早到达的进程先执行直到完成或阻塞短作业优先调度算法优先选择运行时间最短的进程来运行时间轮转调度算法将时间划分为时间片时间量每个进程在一个时间片内运行然后切换到下一个进程多级反馈队列调度算法将进程划分为多个队列每个队列具有不同的优先级进程在队列之间移动具有更高优先级的队列的进程会更早执行而长时间等待的进程会被提升到更高优先级队列最高优先级调度为每个进程分配一个优先级优先级较高的进程先执行这可能导致低优先级进程长时间等待可能引发饥饿问题面试官进程间的通信方式候选人概有种常的进程间的通信式管道匿名管道于具有亲缘关系的进程间或者兄弟进程之间的通信有名管道匿名管道由于没有名字只能于亲缘关系的进程间通信为了克服这个缺点提出了有名管道有名管道严格遵循先进先出可以实现本机任意两个进程通信信号信号是种复杂的通信式于通知接收进程某个事件已经发消息队列消息队列是消息的链表具有特定的格式存放在内存中并由消息队列标识符标识管道和消息队列的通信数据都是先进先出的原则与管道不同的是消息队列存放在内核中只有在内核重启即操作系统重启或者显示地删除个消息队列时该消息队列才会被真正的删除消息队列可以实现消息的随机查询消息不定要以先进先出的次序读取也可以按消息的类型读取更有优势信号量信号量是个计数器于多进程对共享数据的访问信号量的意图在于进程间同步这种通信式主要于解决与同步相关的问题并避免竞争条件共享内存使得多个进程可以访问同块内存空间不同进程可以及时看到对进程中对共享内存中数据的更新这种式需要依靠某种同步操作如互斥锁和信号量等可以说这是最有的进程间通信式套接字此法主要于在客户端和服务器之间通过络进通信套接字是持的络通信的基本操作单元简单的说就是通信的两的种约定套接字中的相关函数来完成通信过程面试官那线程间的同步的式有哪些呢候选人线程同步是两个或多个共享关键资源的线程的并发执行应该同步线程以避免关键的资源使用冲突下面是几种常见的线程同步的方式互斥锁采用互斥对象机制只有拥有互斥对象的线程才有访问公共资源的权限因为互斥对象只有一个所以可以保证公共资源不会被多个线程同时访问比如中的关键词和各种都是这种机制读写锁允许多个线程同时读取共享资源但只有一个线程可以对共享资源进行写操作信号量它允许同一时刻多个线程访问同一资源但是需要控制同一时刻访问此资源的最大线程数量屏障屏障是一种同步原语用于等待多个线程到达某个点再一起继续执行当一个线程到达屏障时它会停止执行并等待其他线程到达屏障直到所有线程都到达屏障后它们才会一起继续执行比如中的是这种机制事件通过通知操作的方式来保持多线程同步还可以方便的实现多线程优先级的比较操作面试官操作系统的内存管理机制了解吗内存管理有哪种式候选人简单分为连续分配管理式和连续分配管理式这两种连续分配管理式是指为个户程序分配个连续的内存空间常的如块式管理同样地连续分配管理式允许个程序使的内存分布在离散或者说不相邻的内存中常的如式管理和段式管理块式管理远古时代的计算机操系统的内存管理式将内存分为个固定的块每个块中只包含个进程如果程序运需要内存的话操作系统就分配给它块如果程序运只需要很的空间的话分配的这块内存很部分乎被浪费了产生一定的内存碎片式管理把主存分为相等且固定的的形式相对相于块式管理的划分度更提了内存利率减少了碎式管理通过表对应逻辑地址和物理地址段式管理式管理虽然提了内存利率但是式管理其中的实际并任何实际意义段式管理把主存分为段段的但是最重要的是段是有实际意义的每个段定义了组逻辑信息例如有主程序段程序段数据段及栈段等段式管理通过段表对应逻辑地址和物理地址段式管理机制结合了上述两者的优点先将内存划分为若干个段每个段又被进一步划分为若干个页段式管理解决了程序逻辑上不同部分的内存分配问题而页式管理解决了物理内存的连续性问题面试官快表和多级表候选人快表为了解决虚拟地址到物理地址的转换速度操作系统在表案基础之上引了快表来加速虚拟地址到物理地址的转换我们可以把快表理解为种特殊的速缓冲存储器其中的内容是表的部分或者全部内容作为表的它的作与表相似但是提了访问速率由于采表做地址转换读写内存数据时要访问两次主存有了快表有时只要访问次速缓冲存储器次主存这样可加速查找并提指令执速度使快表之后的地址转换流程是这样的根据虚拟地址中的号查快表如果该在快表中直接从快表中读取相应的物理地址如果该不在快表中就访问内存中的表再从表中得到物理地址同时将表中的该映射表项添加到快表中当快表填满后要登记新时就按照定的淘汰策略淘汰掉快表中的个多级表引多级表的主要的是为了避免把全部表直放在内存中占过多空间特别是那些根本就不需要的表就不需要保留在内存中多级表属于时间换空间的典型场景面试官分机制和分段机制有哪些共同点和区别呢候选人共同点分机制和分段机制都是为了提内存利率少内存碎和段都是离散存储的所以两者都是离散分配内存的式但是每个和段中的内存是连续的区别的是固定的由操作系统决定段的不固定取决于我们当前运的程序分页对用户不可见分段对用户可见分页的地址空间是一维的分段的地址空间是二维的面试官逻辑虚拟地址和物理地址候选人我们编程般只有可能和逻辑地址打交道如在语中指针存储的数值就可以理解成为内存的个地址这个地址也就是我们说的逻辑地址逻辑地址由操作系统决定物理地址指的是真实物理内存中地址更具体点来说就是内存地址寄存器中的地址物理地址是内存单元真正的地址为什么要有虚拟地址空间呢没有虚拟地址空间的时候程序都是直接访问和操作的都是物理内存但是这样有什么问题呢户程序可以访问任意内存寻址内存的每个字节这样就很容易有意或者意破坏操作系统造成操作系统崩溃想要同时运多个程序特别困难如你想同时运个微信和个乐都不为什么呢举个简单的例微信在运的时候给内存地址赋值后乐也同样给内存地址赋值那么乐对内存的赋值就会覆盖微信之前所赋的值这就造成了微信这个程序就会崩溃总结来说如果直接把物理地址暴露出来的话会带来严重问题如可能对操作系统造成伤害以及给同时运多个程序造成困难面试官什么是虚拟内存候选人虚拟地址是操作系统提供的一种抽象地址空间它通过页表映射到实际的物理地址其大小可以远远大于物理内存的大小虚拟内存通过将程序的地址空间划分成若干个固定大小的页或段并将这些页或者段映射到物理内存中的不同位置从而使得程序在运行时可以更高效地利用物理内存面试官说下置换算法的作常的置换算法有哪些候选人地址映射过程中若在中发现所要访问的不在内存中则发缺中断缺中断就是要访问的不在主存需要操作系统将其调主存后再进访问在这个时候被内存映射的件实际上成了个分交换件当发缺中断时如果当前内存中并没有空闲的操作系统就必须在内存选择个将其移出内存以便为即将调的让出空间来选择淘汰哪的规则叫做置换算法我们可以把置换算法看成是淘汰的规则置换算法最佳置换算法最佳置换算法所选择的被淘汰将是以后永不使的或者是在最时间内不再被访问的这样可以保证获得最低的缺率但由于们前法预知进程在内存下的若千中哪个是未来最时间内不再被访问的因该算法法实现般作为衡量其他置换算法的法置换算法先进先出置换算法总是淘汰最先进内存的即选择在内存中驻留时间最久的进淘汰置换算法最近最久未使置换算法算法赋予每个个访问字段来记录个上次被访问以来所经历的时间当须淘汰个时选择现有中其值最的即最近最久未使的予以淘汰置换算法最少使置换算法该置换算法选择在之前时期使最少的作为淘汰面试官解释一下进程同步和互斥以及解决这些问题的办法候选人进程同步是指多个并发执行的进程之间协调和管理它们的执行顺序以确保它们按照一定的顺序或时间间隔执行进程互斥指的是在某一时刻只允许一个进程访问某个共享资源当一个进程正在使用共享资源时其他进程不能同时访问该资源解决进程同步和互斥的问题有很多种方法其中一种常见的方法是使用信号量和操作信号量是一种特殊的变量它表示系统中某种资源的数量或者状态操作是一种对信号量进行增加或者减少的操作它们可以用来控制进程之间的同步或者互斥除此之外下面的方法也可以解决进程同步和互斥问题临界区将可能引发互斥问题的代码段称为临界区为了实现互斥每个进程在进入临界区前必须获取一个锁退出临界区后释放该锁这确保同一时间只有一个进程可以进入临界区互斥锁互斥锁是一种同步机制用于实现互斥每个共享资源都关联一个互斥锁进程在访问该资源前需要先获取互斥锁使用完后释放锁只有获得锁的进程才能访问共享资源面试官介绍一下几种典型的锁候选人两个基础的锁互斥锁互斥锁是一种最常见的锁类型用于实现互斥访问共享资源在任何时刻只有一个线程可以持有互斥锁其他线程必须等待直到锁被释放这确保了同一时间只有一个线程能够访问被保护的资源自旋锁自旋锁是一种基于忙等待的锁即线程在尝试获取锁时会不断轮询直到锁被释放其他的锁都是基于这两个锁的读写锁允许多个线程同时读共享资源只允许一个线程进行写操作分为读共享和写排他两种状态悲观锁认为多线程同时修改共享资源的概率比较高所以访问共享资源时候要上锁乐观锁先不管修改了共享资源再说如果出现同时修改的情况再放弃本次操作面试官死锁产生的条件是什么高频候选人一个线程需要同时获取多把锁这时就容易发生死锁死锁必须具备以下四个条件互斥条件该资源任意个时刻只由个线程占请求与保持条件个进程因请求资源阻塞时对已获得的资源保持不放不剥夺条件线程已获得的资源在末使完之前不能被其他线程强剥夺只有使完毕后才释放资源循环等待条件若进程之间形成种头尾相接的循环等待资源关系面试官如何避免线程死锁高频候选人我上说了产死锁的四个必要条件为了避免死锁我们只要破坏产死锁的四个条件中的其中个就可以了现在我们来挨个分析下破坏互斥条件这个条件我们没有办法破坏因为我们锁本来就是想让他们互斥的临界资源需要互斥访问破坏请求与保持条件次性申请所有的资源破坏不剥夺条件占部分资源的线程进步申请其他资源时如果申请不到可以主动释放它占有的资源破坏循环等待条件靠按序申请资源来预防按某顺序申请资源释放资源则反序释放破坏循环等待条件那什么是资源有序分配法呢线程和线程获取资源的顺序要一样当线程是先尝试获取资源然后尝试获取资源的时候线程同样也是先尝试获取资源然后尝试获取资源也就是说线程和线程总是以相同的顺序申请自己想要的资源面试官如何进行死锁诊断高频候选人这个也很容易我们只需要通过自动的工具就能搞定我们可以先通过来查看当前程序运行的进程然后通过来查看这个进程就能展示出来死锁的问题并且可以定位代码的具体行号范围我们再去找到对应的代码进行排查就行了拓展输出中运行的进程状态信息查看进程内线程的堆栈信息',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-28 23:28:46',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 8 || hour >= 19
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/miahemu" title="GitHub"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="GitHub"/><span class="back-menu-item-text">GitHub</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://leetcode.cn/u/lu-ren-r41/" title="力扣"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="力扣"/><span class="back-menu-item-text">力扣</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://leetcode.cn/u/lu-ren-r41/" title="CSDN"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="CSDN"/><span class="back-menu-item-text">CSDN</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://miahemu.github.io/about/" title="个人简介"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="个人简介"/><span class="back-menu-item-text">个人简介</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">和睦的拾光物语</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 总览</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9460279562&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 小挂件</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/weather/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 天气</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://i.miji.bid/2025/03/23/eeafc8609ad2edbb8e7112ced837d7f4.jpeg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://i.miji.bid/2025/03/23/eeafc8609ad2edbb8e7112ced837d7f4.jpeg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://i.miji.bid/2025/03/23/95cc3943393994ec938f65a9002798af.jpeg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://i.miji.bid/2025/03/23/95cc3943393994ec938f65a9002798af.jpeg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/JAVA%E9%9D%A2%E7%BB%8F/" style="font-size: 1.05rem;">JAVA面经<sup>7</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">数据结构与算法<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AF%95/" style="font-size: 1.05rem;">笔试<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">计算机网络<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/JAVA%E9%9D%A2%E7%BB%8F/" itemprop="url">JAVA面经</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/JAVA%E9%9D%A2%E7%BB%8F/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>JAVA面经</span></a></span></div></div><h1 class="post-title" itemprop="name headline">操作系统相关面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-03-26T16:00:00.000Z" title="发表于 2025-03-27 00:00:00">2025-03-27</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-03-28T15:28:46.622Z" title="更新于 2025-03-28 23:28:46">2025-03-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">6.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统相关面试题"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为浙江义乌"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>浙江义乌</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://w.wallhaven.cc/full/p9/wallhaven-p9q9mj.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"><header><a class="post-meta-categories" href="/categories/JAVA%E9%9D%A2%E7%BB%8F/" itemprop="url">JAVA面经</a><a href="/tags/JAVA%E9%9D%A2%E7%BB%8F/" tabindex="-1" itemprop="url">JAVA面经</a><h1 id="CrawlerTitle" itemprop="name headline">操作系统相关面试题</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">miahemu</span><time itemprop="dateCreated datePublished" datetime="2025-03-26T16:00:00.000Z" title="发表于 2025-03-27 00:00:00">2025-03-27</time><time itemprop="dateCreated datePublished" datetime="2025-03-28T15:28:46.622Z" title="更新于 2025-03-28 23:28:46">2025-03-28</time></header><div class="note red anzhiyufont anzhiyu-icon-fan flat"><p>本文为原创内容，转载请注明出处并附带原文链接。感谢您的尊重与支持！</p>
+</div>
+
+<div class="tip sync"><p>你必须非常努力，才能看起来毫不费劲。</p>
+</div>
+
+<hr>
+<h3 id="面试官：-进程和线程的区别（高频）"><a href="#面试官：-进程和线程的区别（高频）" class="headerlink" title="面试官： 进程和线程的区别（高频）"></a><strong>面试官：</strong> 进程和线程的区别<code>（高频）</code></h3><p><strong>候选人：</strong> 线程和进程的区别主要体现在以下四个方面：</p>
+<p>1️⃣ <strong>资源分配：</strong> 进程是操作系统分配资源的基本单位，拥有独立的内存空间；线程共享进程资源，多个线程可访问相同的数据。</p>
+<blockquote>
+<p><strong>你说到进程是分配资源的基本单位，那么这个资源指的是什么？</strong> 虚拟内存、文件句柄、信号量等资源。</p>
+</blockquote>
+<p>2️⃣ <strong>创建与切换开销：</strong> 进程创建和切换成本较高，需要完整的资源分配和回收；线程切换更轻量，仅需保存和恢复私有数据。</p>
+<p>3️⃣ <strong>通信与同步：</strong> 进程间通信（IPC）依赖管道、消息队列等机制，效率较低；线程共享进程数据，通信更快，但需加锁避免竞争。</p>
+<p>4️⃣ <strong>容错与并发：</strong> 进程崩溃通常不影响其他进程，适用于高可靠性场景；线程共享进程资源，故单个线程异常可能导致整个进程崩溃。</p>
+<blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67e6bbfe0ba3d5a1d7e5c513.png" alt="image-20250312163103774"></p>
+</blockquote>
+<hr>
+<h3 id="面试官：-线程比进程高效的原因？（高频）"><a href="#面试官：-线程比进程高效的原因？（高频）" class="headerlink" title="面试官： 线程比进程高效的原因？（高频）"></a><strong>面试官：</strong> 线程比进程高效的原因？<code>（高频）</code></h3><p><strong>候选人：</strong> 线程相较于进程的优势主要体现在<strong>资源共享、创建成本、切换开销和并发效率</strong>四个方面。  </p>
+<ul>
+<li><strong>资源共享</strong>：进程间通信（IPC）成本较高，而线程共享进程资源，数据访问更快，通信更高效。  </li>
+<li><strong>创建成本</strong>：进程创建需分配独立内存，开销大；线程仅需分配栈，创建速度更快。  </li>
+<li><strong>切换开销</strong>：进程切换涉及完整上下文切换，线程切换仅涉及寄存器和栈指针，开销更小。  </li>
+<li><strong>并发执行</strong>：线程能充分利用多核 CPU 并行执行，提高程序吞吐量，而进程的资源隔离限制了并发效率。</li>
+</ul>
+<hr>
+<h3 id="面试官：-进程，线程，协程的区别是什么？（高频）"><a href="#面试官：-进程，线程，协程的区别是什么？（高频）" class="headerlink" title="面试官： 进程，线程，协程的区别是什么？（高频）"></a><strong>面试官：</strong> 进程，线程，协程的区别是什么？<code>（高频）</code></h3><p><strong>候选人：</strong></p>
+<ul>
+<li><p>首先,我们来谈谈<strong>进程</strong>。进程是操作系统分配资源的基本单位，它拥有自己的<strong>独立内存空间</strong>和系统资源。每个进程都有独立的堆和栈，不与其他进程共享。进程间通信需要通过特定的机制，<strong>如管道、消息队列、信号量等</strong>。由于进程拥有独立的内存空间，因此其稳定性和安全性相对较高,但同时上下文切换的开销也较大,因为需要保存和恢复整个进程的状态。</p>
+</li>
+<li><p>接下来是<strong>线程</strong>。线程是进程内的一个执行单元,也是CPU调度的基本单位。与进程不同，线程共享进程的内存空间，包括堆和方法区。线程之间通信更加高效，因为它们可以直接读写<strong>共享内存</strong>。线程的上下文切换开销较小,因为只需要保存和恢复线程的上下文，而不是整个进程的状态。然而，由于多个线程共享内存空间，因此存在线程安全的问题，需要通过同步和互斥机制来解决。</p>
+</li>
+<li><p>最后是<strong>协程</strong>。协程是一种用户态的轻量级线程，其调度完全由用户程序控制，而不需要内核的参与。<strong>协程拥有自己的寄存器和栈，但与其他协程共享堆内存。<strong>协程的切换开销非常小，因为只需要保存和恢复协程的上下文，而无需进行内核级的上下文切换。这使得协程在处理</strong>大量并发任务时</strong>具有非常高的效率。然而，协程需要程序员显式地进行调度和管理，相对于线程和进程来说,其编程模型更为复杂。</p>
+</li>
+</ul>
+<hr>
+<h3 id="面试官：-用户态和内核态是如何切换的？（高频）"><a href="#面试官：-用户态和内核态是如何切换的？（高频）" class="headerlink" title="面试官： 用户态和内核态是如何切换的？（高频）"></a><strong>面试官：</strong> 用户态和内核态是如何切换的？<code>（高频）</code></h3><p><strong>候选人：</strong></p>
+<p>在操作系统中，<strong>用户态</strong>用于运行普通应用程序，受限访问系统资源，而<strong>内核态</strong>具备最高权限，能够直接控制硬件。两者的切换主要通过以下三种方式：  </p>
+<ul>
+<li><strong>系统调用</strong>：应用程序请求受限资源（如文件、网络）时，会触发系统调用，使 CPU 进入内核态，执行相应内核函数，完成后返回用户态。  </li>
+<li><strong>异常处理</strong>：程序在用户态发生错误（如除零、非法内存访问）时，CPU 进入内核态执行异常处理程序，决定是否恢复或终止进程。  </li>
+<li><strong>硬件中断</strong>：当外设（比如键盘、定时器等）完成任务时，触发中断，CPU 切换至内核态处理中断，随后恢复用户态继续执行程序。</li>
+</ul>
+<hr>
+<h3 id="面试官：-什么是孤儿进程？什么是僵尸进程？"><a href="#面试官：-什么是孤儿进程？什么是僵尸进程？" class="headerlink" title="面试官： 什么是孤儿进程？什么是僵尸进程？"></a><strong>面试官：</strong> 什么是孤儿进程？什么是僵尸进程？</h3><p><strong>候选人：</strong></p>
+<ul>
+<li><p><code>孤儿进程</code>是指父进程在子进程结束之前就已经退出，导致子进程失去了父进程的管理和控制，成为了 “孤儿”。此时，这些子进程会被系统的 init 进程（在 Linux 系统中，进程 ID 为 1）所收养，init 进程会负责回收它们的资源等工作。</p>
+</li>
+<li><p><code>僵尸进程</code>是指一个进程已经执行完了它的主要任务，进入了终止状态，但由于某些原因，它的父进程没有调用相应的系统函数（如 wait () 或 waitpid ()）来收集它的退出状态信息，导致该进程虽然已经停止运行，但在系统进程表中仍然保留着一个记录，占据着一定的系统资源。</p>
+<blockquote>
+<p>Linux 下可以使用 Top 命令查找，<code>zombie</code> 值表示僵尸进程的数量，为 0 则代表没有僵尸进程。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67e6bc090ba3d5a1d7e5c51a.png" alt="僵尸进程查看"></p>
+<p>下面这个命令可以定位僵尸进程以及该僵尸进程的父进程：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -A -ostat,ppid,pid,cmd |grep -e <span class="string">&#x27;^[Zz]&#x27;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="面试官：-假设两个线程并发读写同一个整型变量，初始值为零，每个线程加-50-次，结果可能是什么？"><a href="#面试官：-假设两个线程并发读写同一个整型变量，初始值为零，每个线程加-50-次，结果可能是什么？" class="headerlink" title="面试官： 假设两个线程并发读写同一个整型变量，初始值为零，每个线程加 50 次，结果可能是什么？"></a><strong>面试官：</strong> 假设两个线程并发读写同一个整型变量，初始值为零，每个线程加 50 次，结果可能是什么？</h3><p><strong>候选人：</strong> 在没有任何同步机制的情况下，两个线程并发对同一个整型变量进行 50 次加 1 操作，最终结果可能是 100，也可能小于 100，最坏的结果是 50，也就是最终的结果可能是在 [50, 100] 。</p>
+<p>小于 100 情况的分析，由于对整型变量的 <code>num++</code> 操作不是原子操作，它实际上包含了三个步骤：读取变量的值、将值加 1、将新值写回变量。在多线程环境下，可能会出现线程安全问题。例如，线程 1 和线程 2 同时读取了变量的当前值，然后各自将其加 1，最后都将相同的新值写回变量，这就导致了一次加 1 操作的丢失。这种情况会多次发生，最终结果就会小于 100。</p>
+<blockquote>
+<p><strong>追问：</strong> 如何保证2 个线程累加之后达到 100？</p>
+<p>第一种方式：原子变量的方法。使用 <code>AtomicInteger</code> 替代普通 <code>int</code>，其 <code>incrementAndGet()</code> 方法保证原子性，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AtomicIntegerAddition</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">AtomicInteger</span> <span class="variable">num</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicInteger</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</span><br><span class="line">                num.incrementAndGet();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</span><br><span class="line">                num.incrementAndGet();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line"></span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;最终结果: &quot;</span> + num.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种方式：通过 <code>synchronized</code> 关键字或 <code>ReentrantLock</code> 确保操作的互斥性，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SynchronizedAddition</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">                    num++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">                    num++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line"></span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;最终结果: &quot;</span> + num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
+<hr>
+<h3 id="面试官：-进程的调度算法有哪些"><a href="#面试官：-进程的调度算法有哪些" class="headerlink" title="面试官： 进程的调度算法有哪些?"></a><strong>面试官：</strong> 进程的调度算法有哪些?</h3><p><strong>候选人：</strong></p>
+<ul>
+<li><p><strong>先到先服务(FCFS)调度算法</strong> : 按照进程到达的先后顺序进行调度，即最早到达的进程先执行，直到完成或阻塞。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://cdn.xiaolincoding.com//picgo/1720958097438-d2dccfb8-bd9b-4556-86a3-2cb8d6c370f1.png" alt="img"></p>
+</li>
+<li><p><strong>短作业优先(SJF)调度算法</strong> : 优先选择运行时间最短的进程来运行。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://cdn.xiaolincoding.com//picgo/1720958113844-46b5799d-6ebf-4f91-8924-d9744e9895d1.png" alt="img"></p>
+</li>
+<li><p><strong>时间⽚轮转调度算法</strong> : 将 <code>CPU</code> 时间划分为时间片(时间量)，每个进程在一个时间片内运行，然后切换到下一个进程。</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://cdn.xiaolincoding.com//picgo/1720958138354-bb990348-3374-4239-8aa6-bd3b3737b5ea.png" alt="image.png"></p>
+<ul>
+<li><p><strong>多级反馈队列调度算法</strong> ：将进程划分为多个队列，每个队列具有不同的优先级，进程在队列之间移动。具有更高优先级的队列的进程会更早执行，而长时间等待的进程会被提升到更高优先级队列。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://cdn.xiaolincoding.com//picgo/1720958157105-0947c14a-f422-464a-9294-7cf5ef8a23bd.png" alt="img"></p>
+</li>
+<li><p><strong>最高优先级调度</strong> ： 为每个进程分配一个优先级，优先级较高的进程先执行。这可能导致低优先级进程长时间等待可能引发饥饿问题。</p>
+</li>
+</ul>
+<hr>
+<h3 id="面试官：-进程间的通信方式"><a href="#面试官：-进程间的通信方式" class="headerlink" title="面试官： 进程间的通信方式"></a><strong>面试官：</strong> 进程间的通信方式</h3><p><strong>候选人：</strong> ⼤概有 7 种常⻅的进程间的通信⽅式。</p>
+<ol>
+<li><p><strong>管道&#x2F;匿名管道(Pipes)</strong> ：⽤于具有<code>亲缘关系</code>的⽗⼦进程间或者兄弟进程之间的通信。</p>
+</li>
+<li><p><strong>有名管道(Names Pipes)</strong>: 匿名管道由于没有名字，只能⽤于亲缘关系的进程间通信。为了克服这个缺点，提出了有名管道。有名管道严格遵循先进先出(first in first out)，可以实现本机任意两个进程通信。</p>
+</li>
+<li><p><strong>信号(Signal)</strong> ：信号是⼀种⽐复杂的通信⽅式，⽤于通知接收进程某个事件已经发⽣；</p>
+</li>
+<li><p><strong>消息队列(Message Queuing)</strong> ：消息队列是消息的链表,具有特定的格式,存放在内存中并由消息队列标识符标识。管道和消息队列的通信数据都是先进先出的原则。与管道不同的是<strong>消息队列存放在内核</strong>中，只有在内核重启(即，操作系统重启)或者显示地删除⼀个消息队列时，该消息队列才会被真正的删除。消息队列可以实现消息的随机查询,消息不⼀定要以先进先出的次序读取,也可以按消息的类型读取，⽐ FIFO 更有优势。</p>
+</li>
+<li><p><strong>信号量(Semaphores)</strong> ：信号量是⼀个计数器，⽤于多进程对共享数据的访问，信号量的意图在于进程间同步。这种通信⽅式主要⽤于解决与同步相关的问题并避免竞争条件。</p>
+</li>
+<li><p><strong>共享内存(Shared memory)</strong>：使得多个进程可以访问同⼀块内存空间，不同进程可以及时看到对⽅进程中对共享内存中数据的更新。这种⽅式需要依靠某种同步操作，如互斥锁和信号量等。可以说这是最有⽤的进程间通信⽅式。</p>
+</li>
+<li><p><strong>套接字(Sockets)</strong> : 此⽅法主要⽤于在客户端和服务器之间通过⽹络进⾏通信。套接字是⽀持 TCP&#x2F;IP 的⽹络通信的基本操作单元，简单的说就是通信的两⽅的⼀种约定，⽤套接字中的相关函数来完成通信过程。</p>
+</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/67e6bc2c0ba3d5a1d7e5c520.png" alt="image-20250225162852270"></p>
+<hr>
+<h3 id="面试官：-那线程间的同步的⽅式有哪些呢？"><a href="#面试官：-那线程间的同步的⽅式有哪些呢？" class="headerlink" title="面试官： 那线程间的同步的⽅式有哪些呢？"></a><strong>面试官：</strong> 那线程间的同步的⽅式有哪些呢？</h3><p><strong>候选人：</strong></p>
+<p>线程同步是两个或多个共享关键资源的线程的并发执行。应该同步线程以避免关键的资源使用冲突。</p>
+<p>下面是几种常见的线程同步的方式：</p>
+<ol>
+<li><strong>互斥锁(Mutex)</strong> ：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问。比如 Java 中的 <code>synchronized</code> 关键词和各种 <code>Lock</code> 都是这种机制。</li>
+<li><strong>读写锁（Read-Write Lock）</strong> ：允许多个线程同时读取共享资源，但只有一个线程可以对共享资源进行写操作。</li>
+<li><strong>信号量(Semaphore)</strong> ：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量。</li>
+<li><strong>屏障（Barrier）</strong> ：屏障是一种同步原语，用于等待多个线程到达某个点再一起继续执行。当一个线程到达屏障时，它会停止执行并等待其他线程到达屏障，直到所有线程都到达屏障后，它们才会一起继续执行。比如 Java 中的 <code>CyclicBarrier</code> 是这种机制。</li>
+<li><strong>事件(Event)</strong> :Wait&#x2F;Notify：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作。</li>
+</ol>
+<hr>
+<h3 id="面试官：-操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？"><a href="#面试官：-操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？" class="headerlink" title="面试官： 操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？"></a><strong>面试官：</strong> 操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？</h3><p><strong>候选人：</strong> 简单分为 <strong>连续分配管理⽅式</strong> 和 <strong>⾮连续分配管理⽅式</strong> 这两种。连续分配管理⽅式是指为⼀个⽤户程序分配⼀个连续的内存空间，常⻅的如 <strong>块式管理</strong> 。同样地，⾮连续分配管理⽅式允许⼀个程序使⽤的内存分布在离散或者说不相邻的内存中，常⻅的如 <strong>⻚式管理</strong> 和 <strong>段式管理</strong>。</p>
+<ol>
+<li><p><strong>块式管理</strong> ： 远古时代的计算机操系统的内存管理⽅式。将内存分为⼏个固定⼤⼩的块，每个块中只包含⼀个进程。如果程序运⾏需要内存的话，操作系统就分配给它⼀块，如果程序运⾏只需要很⼩的空间的话，分配的这块内存很⼤⼀部分⼏乎被浪费了，产生一定的内存碎片。</p>
+</li>
+<li><p><strong>⻚式管理</strong> ：把主存分为⼤⼩相等且固定的⼀⻚⼀⻚的形式，相对相⽐于块式管理的划分⼒度更⼤，提⾼了内存利⽤率，减少了碎⽚。⻚式管理通过<code>⻚表</code>对应逻辑地址和物理地址。</p>
+</li>
+<li><p><strong>段式管理</strong> ： ⻚式管理虽然提⾼了内存利⽤率，但是⻚式管理其中的⻚实际并⽆任何实际意义。 段式管理把主存分为⼀段段的 。但是，最重要的是段是有实际意义的，每个段定义了⼀组逻辑信息，例如,有主程序段 MAIN、⼦程序段X、数据段 D 及栈段 S 等。 段式管理通过<code>段表</code>对应逻辑地址和物理地址。</p>
+</li>
+<li><p><strong>段⻚式管理机制</strong> 。结合了上述两者的优点，<strong>先将内存划分为若干个段</strong>，每个段又被进一步划分为若干个页。段式管理解决了程序逻辑上不同部分的<strong>内存分配</strong>问题，而页式管理解决了物理内存的<strong>连续性</strong>问题。</p>
+</li>
+</ol>
+<hr>
+<h3 id="面试官：-快表和多级⻚表"><a href="#面试官：-快表和多级⻚表" class="headerlink" title="面试官： 快表和多级⻚表"></a><strong>面试官：</strong> 快表和多级⻚表</h3><p><strong>候选人：</strong></p>
+<p><strong>1）快表</strong></p>
+<p>为了解决<code>虚拟地址到物理地址的转换速度</code>，操作系统在 <strong>⻚表⽅案</strong> 基础之上引⼊了 <strong>快表</strong> 来加速虚拟地址到物理地址的转换。我们可以把快表理解为⼀种特殊的⾼速缓冲存储器（Cache），其中的内容是⻚表的⼀部分或者全部内容。作为⻚表的 Cache，它的作⽤与⻚表相似，但是提⾼了访问速率。由于采⽤⻚表做地址转换，读写内存数据时 CPU 要访问两次主存。有了快表，有时只要访问⼀次⾼速缓冲存储器，⼀次主存，这样可加速查找并提⾼指令执⾏速度。</p>
+<blockquote>
+<p>使⽤快表之后的地址转换流程是这样的：</p>
+<ol>
+<li><p>根据虚拟地址中的⻚号查快表</p>
+</li>
+<li><p>如果该⻚在快表中，直接从快表中读取相应的物理地址；</p>
+</li>
+<li><p>如果该⻚不在快表中，就访问内存中的⻚表，再从⻚表中得到物理地址，同时将⻚表中的该映射表项添加到快表中；</p>
+</li>
+<li><p>当快表填满后，⼜要登记新⻚时，就按照⼀定的淘汰策略淘汰掉快表中的⼀个⻚。</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>2）多级⻚表</strong></p>
+<p>引⼊多级⻚表的主要⽬的是<code>为了避免把全部⻚表⼀直放在内存中占⽤过多空间</code>，特别是那些根本就不需要的⻚表就不需要保留在内存中。多级⻚表属于时间换空间的典型场景。</p>
+<hr>
+<h3 id="面试官：-分⻚机制和分段机制有哪些共同点和区别呢？"><a href="#面试官：-分⻚机制和分段机制有哪些共同点和区别呢？" class="headerlink" title="面试官： 分⻚机制和分段机制有哪些共同点和区别呢？"></a><strong>面试官：</strong> 分⻚机制和分段机制有哪些共同点和区别呢？</h3><p><strong>候选人：</strong></p>
+<ol>
+<li><strong>共同点</strong> ：</li>
+</ol>
+<ul>
+<li><p>分⻚机制和分段机制都是为了提⾼内存利⽤率，少内存碎⽚。</p>
+</li>
+<li><p>⻚和段都是离散存储的，所以两者都是离散分配内存的⽅式。但是，每个⻚和段中的内存是连续的。</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>区别</strong> ：</li>
+</ol>
+<ul>
+<li><p>⻚的⼤⼩是固定的，由操作系统决定；⽽段的⼤⼩不固定，取决于我们当前运⾏的程序。</p>
+</li>
+<li><p>分页对用户不可见，分段对用户可见</p>
+</li>
+<li><p>分页的地址空间是一维的，分段的地址空间是二维的</p>
+</li>
+</ul>
+<hr>
+<h3 id="面试官：-逻辑-虚拟-地址和物理地址"><a href="#面试官：-逻辑-虚拟-地址和物理地址" class="headerlink" title="面试官： 逻辑(虚拟)地址和物理地址"></a><strong>面试官：</strong> 逻辑(虚拟)地址和物理地址</h3><p><strong>候选人：</strong> 我们编程⼀般只有可能和逻辑地址打交道，⽐如在 C 语⾔中，指针⾥⾯存储的数值就可以理解成为内存⾥的⼀个地址，这个地址也就是我们说的逻辑地址，逻辑地址由操作系统决定。物理地址指的是真实物理内存中地址，更具体⼀点来说就是内存地址寄存器中的地址。物理地址是内存单元真正的地址。</p>
+<blockquote>
+<p><strong>为什么要有虚拟地址空间呢？</strong></p>
+<p>没有虚拟地址空间的时候，<strong>程序都是直接访问和操作的都是物理内存</strong> 。但是这样有什么问题呢？</p>
+<ol>
+<li><p>⽤户程序可以访问任意内存，寻址内存的每个字节，这样就很容易（有意或者⽆意）破坏操作系统，造成操作系统崩溃。</p>
+</li>
+<li><p>想要同时运⾏多个程序特别困难，⽐如你想同时运⾏⼀个微信和⼀个 QQ ⾳乐都不⾏。为什么呢？举个简单的例⼦：微信在运⾏的时候给内存地址 1xxx 赋值后，QQ ⾳乐也同样给内存地址 1xxx 赋值，那么 QQ ⾳乐对内存的赋值就会覆盖微信之前所赋的值，这就造成了微信这个程序就会崩溃</p>
+</li>
+</ol>
+<p><strong>总结来说：如果直接把物理地址暴露出来的话会带来严重问题，⽐如可能对操作系统造成伤害以及给同时运⾏多个程序造成困难。</strong></p>
+</blockquote>
+<hr>
+<h3 id="面试官：-什么是虚拟内存"><a href="#面试官：-什么是虚拟内存" class="headerlink" title="面试官： 什么是虚拟内存?"></a><strong>面试官：</strong> 什么是虚拟内存?</h3><p><strong>候选人：</strong> 虚拟地址是操作系统提供的一种抽象地址空间，它通过页表映射到实际的物理地址，其大小可以远远大于物理内存的大小。</p>
+<p>虚拟内存通过将程序的地址空间划分成若干个固定大小的页或段，并将这些页或者段<strong>映射到物理内存中</strong>的不同位置,从而使得程序在运行时可以更高效地利用物理内存。</p>
+<hr>
+<h3 id="面试官：-说⼀下⻚⾯置换算法的作⽤-常⻅的⻚⾯置换算法有哪些"><a href="#面试官：-说⼀下⻚⾯置换算法的作⽤-常⻅的⻚⾯置换算法有哪些" class="headerlink" title="面试官： 说⼀下⻚⾯置换算法的作⽤?常⻅的⻚⾯置换算法有哪些?"></a><strong>面试官：</strong> 说⼀下⻚⾯置换算法的作⽤?常⻅的⻚⾯置换算法有哪些?</h3><p><strong>候选人：</strong> 地址映射过程中，若在⻚⾯中发现所要访问的⻚⾯不在内存中，则发⽣缺⻚中断 。</p>
+<blockquote>
+<p><strong>缺⻚中断</strong> 就是要访问的 <strong>⻚</strong> 不在主存，需要操作系统将其调⼊主存后再进⾏访问。 在这个时候，被内存映射的⽂件实际上成了⼀个分⻚交换⽂件。</p>
+</blockquote>
+<p>当发⽣缺⻚中断时，如果当前内存中并没有空闲的⻚⾯，操作系统就必须在内存选择⼀个⻚⾯将其移出内存，以便为即将调⼊的⻚⾯让出空间。⽤来选择淘汰哪⼀⻚的规则叫做⻚⾯置换算法，我们可以把⻚⾯置换算法看成是淘汰⻚⾯的规则。</p>
+<ul>
+<li><p><strong>OPT</strong> <strong>⻚⾯置换算法（最佳⻚⾯置换算法）</strong> ：最佳(OPT)置换算法所选择的被淘汰⻚⾯将是以后永不使⽤的，或者是在最⻓时间内不再被访问的⻚⾯,这样可以保证获得最低的缺⻚率。但由于⼈们⽬前⽆法预知进程在内存下的若千⻚⾯中哪个是未来最⻓时间内不再被访问的，因⽽该算法⽆法实现。⼀般作为衡量其他置换算法的⽅法。</p>
+</li>
+<li><p><strong>FIFO（First In First Out）⻚⾯置换算法（先进先出⻚⾯置换算法）</strong> : 总是淘汰最先进⼊内存的⻚⾯，即选择在内存中驻留时间最久的⻚⾯进⾏淘汰。</p>
+</li>
+<li><p><strong>LRU（Least Currently Used）⻚⾯置换算法（最近最久未使⽤⻚⾯置换算法）</strong> ：LRU算法赋予每个⻚⾯⼀个访问字段，⽤来记录⼀个⻚⾯⾃上次被访问以来所经历的时间 T，当须淘汰⼀个⻚⾯时，选择现有⻚⾯中其 T 值最⼤的，即最近最久未使⽤的⻚⾯予以淘汰。</p>
+</li>
+<li><p><strong>LFU（Least Frequently Used）⻚⾯置换算法（最少使⽤⻚⾯置换算法）</strong> : 该置换算法选择在之前时期使⽤最少的⻚⾯作为淘汰⻚。</p>
+</li>
+</ul>
+<hr>
+<h3 id="面试官：-解释一下进程同步和互斥，以及解决这些问题的办法"><a href="#面试官：-解释一下进程同步和互斥，以及解决这些问题的办法" class="headerlink" title="面试官： 解释一下进程同步和互斥，以及解决这些问题的办法"></a><strong>面试官：</strong> 解释一下进程同步和互斥，以及解决这些问题的办法</h3><p><strong>候选人：</strong></p>
+<p><code>进程同步</code>是指多个并发执行的进程之间协调和管理它们的执行顺序，以确保它们<strong>按照一定的顺序或时间间隔执行</strong>。</p>
+<p><code>进程互斥</code>指的是在<strong>某一时刻只允许一个进程访问某个共享资源</strong>。当一个进程正在使用共享资源时，其他进程不能同时访问该资源。</p>
+<p>解决进程同步和互斥的问题有很多种方法，其中一种常见的方法是使用<strong>信号量</strong>和 <strong>PV 操作</strong>。信号量是一种特殊的变量，它表示系统中某种资源的数量或者状态。PV 操作是一种对信号量进行增加或者减少的操作，它们可以用来控制进程之间的同步或者互斥。</p>
+<p>除此之外，下面的方法也可以解决进程同步和互斥问题:</p>
+<ul>
+<li><strong>临界区(Critical Section)</strong>: 将可能引发互斥问题的代码段称为临界区。为了实现互斥，每个进程在进入临界区前必须获取一个锁，退出临界区后释放该锁。这确保同一时间只有一个进程可以进入临界区。</li>
+<li><strong>互斥锁(Mutex)</strong>: 互斥锁是一种同步机制，用于实现互斥。每个共享资源都关联一个互斥锁进程在访问该资源前需要先获取互斥锁，使用完后释放锁。只有获得锁的进程才能访问共享资源。</li>
+</ul>
+<hr>
+<h3 id="面试官：-介绍一下几种典型的锁"><a href="#面试官：-介绍一下几种典型的锁" class="headerlink" title="面试官： 介绍一下几种典型的锁"></a><strong>面试官：</strong> 介绍一下几种典型的锁</h3><p><strong>候选人：</strong></p>
+<p>两个基础的锁：</p>
+<ul>
+<li><strong>互斥锁</strong>:互斥锁是一种最常见的锁类型，用于实现互斥访问共享资源。在任何时刻，只有一个线程可以持有互斥锁，其他线程必须等待直到锁被释放。这确保了同一时间只有一个线程能够访问被保护的资源。</li>
+<li><strong>自旋锁</strong>:自旋锁是一种基于忙等待的锁，即线程在尝试获取锁时会不断轮询，直到锁被释放。</li>
+</ul>
+<p>其他的锁都是基于这两个锁的：</p>
+<ul>
+<li><strong>读写锁</strong>:允许多个线程同时读共享资源，只允许一个线程进行写操作。分为读(共享)和写(排他)两种状态。</li>
+<li><strong>悲观锁</strong>:认为多线程同时修改共享资源的概率比较高，所以访问共享资源时候要上锁</li>
+<li><strong>乐观锁</strong>:先不管，修改了共享资源再说，如果出现同时修改的情况，再放弃本次操作。.</li>
+</ul>
+<hr>
+<h3 id="面试官：死锁产生的条件是什么？（高频）"><a href="#面试官：死锁产生的条件是什么？（高频）" class="headerlink" title="面试官：死锁产生的条件是什么？（高频）"></a><strong>面试官</strong>：死锁产生的条件是什么？<code>（高频）</code></h3><p><strong>候选人</strong>：一个线程需要同时获取多把锁，这时就容易发生死锁。</p>
+<p>死锁必须具备以下四个条件：</p>
+<ol>
+<li><p><strong>互斥条件：</strong> 该资源任意⼀个时刻只由⼀个线程占⽤。</p>
+</li>
+<li><p><strong>请求与保持条件：</strong> ⼀个进程因请求资源⽽阻塞时，对已获得的资源保持不放。</p>
+</li>
+<li><p><strong>不剥夺条件:</strong> 线程已获得的资源在末使⽤完之前不能被其他线程强⾏剥夺，只有⾃⼰使⽤完毕后才释放资源。</p>
+</li>
+<li><p><strong>循环等待条件:</strong> 若⼲进程之间形成⼀种头尾相接的循环等待资源关系。</p>
+</li>
+</ol>
+<hr>
+<h3 id="面试官：如何避免线程死锁-（高频）"><a href="#面试官：如何避免线程死锁-（高频）" class="headerlink" title="面试官：如何避免线程死锁?（高频）"></a><strong>面试官</strong>：如何避免线程死锁?<code>（高频）</code></h3><p><strong>候选人：</strong> 我上⾯说了产⽣死锁的四个必要条件，为了避免死锁，我们只要破坏产⽣死锁的四个条件中的其中⼀个就可以了。现在我们来挨个分析⼀下：</p>
+<ol>
+<li><p><strong>破坏互斥条件</strong> ：这个条件我们没有办法破坏，因为我们⽤锁本来就是想让他们互斥的（临界资源需要互斥访问）。</p>
+</li>
+<li><p><strong>破坏请求与保持条件</strong> ：⼀次性申请所有的资源。</p>
+</li>
+<li><p><strong>破坏不剥夺条件</strong> ：占⽤部分资源的线程进⼀步申请其他资源时，如果申请不到，可以主动释放它占有的资源。</p>
+</li>
+<li><p><strong>破坏循环等待条件</strong> ：靠按序申请资源来预防。按某⼀顺序申请资源，释放资源则反序释放。破坏循环等待条件。</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>那什么是资源有序分配法呢?</strong> 线程A和线程 B获取资源的顺序要一样，当线程A是先尝试获取资源 A, 然后尝试获取资源 B 的时候，线程B同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A和线程B总是以相同的顺序申请自己想要的资源。</p>
+</blockquote>
+<hr>
+<h3 id="面试官：如何进行死锁诊断？（高频）"><a href="#面试官：如何进行死锁诊断？（高频）" class="headerlink" title="面试官：如何进行死锁诊断？（高频）"></a><strong>面试官</strong>：如何进行死锁诊断？<code>（高频）</code></h3><p><strong>候选人</strong>：这个也很容易，我们只需要通过jdk自动的工具就能搞定。</p>
+<p>我们可以先通过<code>jps</code>来查看当前java程序运行的进程id，然后通过<code>jstack</code>来查看这个进程id，就能展示出来死锁的问题，并且，可以定位代码的具体行号范围，我们再去找到对应的代码进行排查就行了。</p>
+<blockquote>
+<p><strong>拓展：</strong></p>
+<p><code>jps</code>：输出JVM中运行的进程状态信息。</p>
+<p><code>jstack</code>：查看java进程内线程的堆栈信息。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/zm/wallhaven-zmoyko.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/zm/wallhaven-zmoyko.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">miahemu</div><div class="post-copyright__author_desc">Hi~同行者</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/03/27/操作系统相关面试题/')">操作系统相关面试题</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://i.miji.bid/2025/03/23/eeafc8609ad2edbb8e7112ced837d7f4.jpeg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://i.miji.bid/2025/03/23/eeafc8609ad2edbb8e7112ced837d7f4.jpeg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://i.miji.bid/2025/03/23/95cc3943393994ec938f65a9002798af.jpeg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://i.miji.bid/2025/03/23/95cc3943393994ec938f65a9002798af.jpeg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">和睦的拾光物语</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/JAVA%E9%9D%A2%E7%BB%8F/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>JAVA面经<span class="tagsPageCount">7</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/p9/wallhaven-p9q9mj.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2025/03/27/%E8%AE%A1%E7%BD%91%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/8o/wallhaven-8o57xj.jpg" onerror="onerror=null;src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计网相关面试题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2025/03/23/Java%E9%9B%86%E5%90%88%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Java集合相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/qz/wallhaven-qzwme5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-23</div><div class="title">Java集合相关面试题</div></div></a></div><div><a href="/2025/03/24/MySQL%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="MySQL相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/ym/wallhaven-ym22lk.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-24</div><div class="title">MySQL相关面试题</div></div></a></div><div><a href="/2025/03/22/JavaSE%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="JavaSE相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/l8/wallhaven-l8ejkp.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-22</div><div class="title">JavaSE相关面试题</div></div></a></div><div><a href="/2025/03/25/Redis%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Redis相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/xl/wallhaven-xl8p9d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-25</div><div class="title">Redis相关面试题</div></div></a></div><div><a href="/2025/03/23/SSM%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="SSM框架相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/zy/wallhaven-zywwky.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-23</div><div class="title">SSM框架相关面试题</div></div></a></div><div><a href="/2025/03/27/%E8%AE%A1%E7%BD%91%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="计网相关面试题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/8o/wallhaven-8o57xj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-27</div><div class="title">计网相关面试题</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/zm/wallhaven-zmoyko.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">🌙惟信道而且行善，并以真理相劝，以坚忍相勉的人则不然。<br>----时光章[103:3]</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">miahemu</h1><div class="author-info__desc">Hi~同行者</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/miahemu" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1046498117" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">1.屏幕太大功能显示不全的话，可以手动"ctrl + -"来缩放页面。  2.网页右上角换至深色主题效果更佳✨   3.网页左下角可以播放音乐哦☀️</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">面试官： 进程和线程的区别（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E7%BA%BF%E7%A8%8B%E6%AF%94%E8%BF%9B%E7%A8%8B%E9%AB%98%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9F%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">面试官： 线程比进程高效的原因？（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">面试官： 进程，线程，协程的区别是什么？（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E7%9A%84%EF%BC%9F%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">面试官： 用户态和内核态是如何切换的？（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">面试官： 什么是孤儿进程？什么是僵尸进程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E5%81%87%E8%AE%BE%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E8%AF%BB%E5%86%99%E5%90%8C%E4%B8%80%E4%B8%AA%E6%95%B4%E5%9E%8B%E5%8F%98%E9%87%8F%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%80%BC%E4%B8%BA%E9%9B%B6%EF%BC%8C%E6%AF%8F%E4%B8%AA%E7%BA%BF%E7%A8%8B%E5%8A%A0-50-%E6%AC%A1%EF%BC%8C%E7%BB%93%E6%9E%9C%E5%8F%AF%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">面试官： 假设两个线程并发读写同一个整型变量，初始值为零，每个线程加 50 次，结果可能是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">7.</span> <span class="toc-text">面试官： 进程的调度算法有哪些?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">面试官： 进程间的通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E9%82%A3%E7%BA%BF%E7%A8%8B%E9%97%B4%E7%9A%84%E5%90%8C%E6%AD%A5%E7%9A%84%E2%BD%85%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%91%A2%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">面试官： 那线程间的同步的⽅式有哪些呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%89%E5%93%AA%E2%BC%8F%E7%A7%8D%E2%BD%85%E5%BC%8F%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">面试官： 操作系统的内存管理机制了解吗？内存管理有哪⼏种⽅式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E5%BF%AB%E8%A1%A8%E5%92%8C%E5%A4%9A%E7%BA%A7%E2%BB%9A%E8%A1%A8"><span class="toc-number">11.</span> <span class="toc-text">面试官： 快表和多级⻚表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E5%88%86%E2%BB%9A%E6%9C%BA%E5%88%B6%E5%92%8C%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E6%9C%89%E5%93%AA%E4%BA%9B%E5%85%B1%E5%90%8C%E7%82%B9%E5%92%8C%E5%8C%BA%E5%88%AB%E5%91%A2%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">面试官： 分⻚机制和分段机制有哪些共同点和区别呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E9%80%BB%E8%BE%91-%E8%99%9A%E6%8B%9F-%E5%9C%B0%E5%9D%80%E5%92%8C%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="toc-number">13.</span> <span class="toc-text">面试官： 逻辑(虚拟)地址和物理地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">14.</span> <span class="toc-text">面试官： 什么是虚拟内存?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%AF%B4%E2%BC%80%E4%B8%8B%E2%BB%9A%E2%BE%AF%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95%E7%9A%84%E4%BD%9C%E2%BD%A4-%E5%B8%B8%E2%BB%85%E7%9A%84%E2%BB%9A%E2%BE%AF%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">15.</span> <span class="toc-text">面试官： 说⼀下⻚⾯置换算法的作⽤?常⻅的⻚⾯置换算法有哪些?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E5%8A%9E%E6%B3%95"><span class="toc-number">16.</span> <span class="toc-text">面试官： 解释一下进程同步和互斥，以及解决这些问题的办法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A-%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%87%A0%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E9%94%81"><span class="toc-number">17.</span> <span class="toc-text">面试官： 介绍一下几种典型的锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A%E6%AD%BB%E9%94%81%E4%BA%A7%E7%94%9F%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">18.</span> <span class="toc-text">面试官：死锁产生的条件是什么？（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BA%BF%E7%A8%8B%E6%AD%BB%E9%94%81-%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">面试官：如何避免线程死锁?（高频）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%AD%BB%E9%94%81%E8%AF%8A%E6%96%AD%EF%BC%9F%EF%BC%88%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">20.</span> <span class="toc-text">面试官：如何进行死锁诊断？（高频）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="操作系统相关面试题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/p9/wallhaven-p9q9mj.png" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="操作系统相关面试题"/></a><div class="content"><a class="title" href="/2025/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="操作系统相关面试题">操作系统相关面试题</a><time datetime="2025-03-26T16:00:00.000Z" title="发表于 2025-03-27 00:00:00">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/%E8%AE%A1%E7%BD%91%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="计网相关面试题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/8o/wallhaven-8o57xj.jpg" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="计网相关面试题"/></a><div class="content"><a class="title" href="/2025/03/27/%E8%AE%A1%E7%BD%91%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="计网相关面试题">计网相关面试题</a><time datetime="2025-03-26T16:00:00.000Z" title="发表于 2025-03-27 00:00:00">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/25/Redis%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Redis相关面试题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/xl/wallhaven-xl8p9d.jpg" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="Redis相关面试题"/></a><div class="content"><a class="title" href="/2025/03/25/Redis%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Redis相关面试题">Redis相关面试题</a><time datetime="2025-03-24T16:00:00.000Z" title="发表于 2025-03-25 00:00:00">2025-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/25/TCP%E9%87%8D%E4%BC%A0%E7%AD%89/" title="破解网络奥秘：一图胜千言，TCP重传、滑动窗口、流量与拥塞控制全解析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/57/wallhaven-575do8.png" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="破解网络奥秘：一图胜千言，TCP重传、滑动窗口、流量与拥塞控制全解析"/></a><div class="content"><a class="title" href="/2025/03/25/TCP%E9%87%8D%E4%BC%A0%E7%AD%89/" title="破解网络奥秘：一图胜千言，TCP重传、滑动窗口、流量与拥塞控制全解析">破解网络奥秘：一图胜千言，TCP重传、滑动窗口、流量与拥塞控制全解析</a><time datetime="2025-03-24T16:00:00.000Z" title="发表于 2025-03-25 00:00:00">2025-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/24/MySQL%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="MySQL相关面试题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/ym/wallhaven-ym22lk.jpg" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg'" alt="MySQL相关面试题"/></a><div class="content"><a class="title" href="/2025/03/24/MySQL%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" title="MySQL相关面试题">MySQL相关面试题</a><time datetime="2025-03-23T16:00:00.000Z" title="发表于 2025-03-24 00:00:00">2025-03-24</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://mail.qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/zm/wallhaven-zmoyko.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://miahemu.github.io/" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div><div id="workboard"><div id="runtimeTextTip"></div></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" rel="noopener" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" rel="noopener" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" rel="noopener" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 By <a class="footer-bar-link" href="/" title="miahemu" target="_blank">miahemu</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["心怀信仰&#44; 步步生光&#44; 主恩常在&#44; 万物蒙福."]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://miahemu.github.io" title="Allah will bless you☘️">Allah will bless you☘️</a><a class="footer-bar-link cc" href="/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/miahemu" title="GitHub"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="GitHub"/><span class="back-menu-item-text">GitHub</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://leetcode.cn/u/lu-ren-r41/" title="力扣"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="力扣"/><span class="back-menu-item-text">力扣</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://leetcode.cn/u/lu-ren-r41/" title="CSDN"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="CSDN"/><span class="back-menu-item-text">CSDN</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://miahemu.github.io/about/" title="个人简介"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://w.wallhaven.cc/full/jx/wallhaven-jx6yj5.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="个人简介"/><span class="back-menu-item-text">个人简介</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 总览</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9460279562&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 小挂件</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/weather/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 天气</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/JAVA%E9%9D%A2%E7%BB%8F/" style="font-size: 0.88rem;">JAVA面经<sup>7</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">数据结构与算法<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AF%95/" style="font-size: 0.88rem;">笔试<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">计算机网络<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="9461259355" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("2025/3/22 07:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 miahemu 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("2025/3/22 07:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "";
+        img.alt = "";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><div class="aplayer no-destroy" data-id="565851830" data-server="netease" data-type="song" data-mini="true" data-autoplay="true" data-lrcType="-1"> </div><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
