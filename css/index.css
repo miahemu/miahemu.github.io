@@ -9749,7 +9749,7 @@ h1.page-title + .tag-cloud-list {
   overflow-y: scroll;
   overflow-y: overlay;
   margin: 0 -24px;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 180px);
   width: calc(100% + 48px);
 }
 @media screen and (max-width: 1200px) {
